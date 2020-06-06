@@ -1,5 +1,7 @@
 # Collection
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/697aa91d-6e22-4b74-844b-30eb5d3e0b51/deploy-status)](https://app.netlify.com/sites/url-collection/deploys)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
 ## Development server
