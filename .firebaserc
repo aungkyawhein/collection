@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "collection-b955a": {
+      "hosting": {
+        "collection": [
+          "collection-b955a"
+        ]
+      }
+    }
+  }
+}
