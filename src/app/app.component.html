@@ -3,3 +3,15 @@
     <h1>Collection App</h1>
   </mat-toolbar-row>
 </mat-toolbar>
+
+<!--
+  TODO: just placeholder
+-->
+<ul>
+  <li *ngFor="let item of items | async">
+    {{ item.name }}
+  </li>
+</ul>
+
+<input type="text" [(ngModel)]="item.name">
+<button type="button" (click)="addItem($event)">Add item</button>
