@@ -13,5 +13,25 @@
   </li>
 </ul>
 
-<input type="text" [(ngModel)]="item.name">
-<button type="button" (click)="addItem($event)">Add item</button>
+<form>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input type="text" matInput placeholder="Short name" name="name" [(ngModel)]="item.name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>URL</mat-label>
+    <input type="url" matInput placeholder="Full URL" name="url" [(ngModel)]="item.url">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Category</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let category of categories" name="category" [(ngModel)]="item.category">
+        {{category}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" (click)="addItem($event)">Add</button>
+</form>
