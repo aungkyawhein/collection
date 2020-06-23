@@ -4,34 +4,4 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<!--
-  TODO: just placeholder
--->
-<ul>
-  <li *ngFor="let item of items | async">
-    {{ item.name }}
-  </li>
-</ul>
-
-<form>
-  <mat-form-field>
-    <mat-label>Name</mat-label>
-    <input type="text" matInput placeholder="Short name" name="name" [(ngModel)]="item.name">
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>URL</mat-label>
-    <input type="url" matInput placeholder="Full URL" name="url" [(ngModel)]="item.url">
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Category</mat-label>
-    <mat-select name="category" [(ngModel)]="item.category">
-      <mat-option *ngFor="let category of categories | async" [value]="category.name">
-        {{category.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <button mat-flat-button color="primary" (click)="addItem($event)">Add</button>
-</form>
+<router-outlet></router-outlet>
