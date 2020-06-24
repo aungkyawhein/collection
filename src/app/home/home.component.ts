@@ -8,10 +8,16 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
+  items: Array<number> = [];
 
   constructor() { }
 
   ngOnInit(): void {
+    let i = 10;
+    while (i > 0) {
+      this.items.push(i);
+      i--;
+    }
   }
 
 }
