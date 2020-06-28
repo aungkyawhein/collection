@@ -1,3 +1,5 @@
 <mat-card *ngFor="let item of items">
-  {{item.name}}
+  <mat-card-content>
+    <a [href]="item.url">{{item.name}}</a>
+  </mat-card-content>
 </mat-card>
