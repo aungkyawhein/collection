@@ -1,16 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-
-export interface Item {
-  name: string;
-  url: string;
-  category: string;
-}
-
-export interface Category {
-  name: string;
-}
+import { Item } from '../models/item';
+import { Category } from '../models/category';
 
 @Component({
   selector: 'app-add',
