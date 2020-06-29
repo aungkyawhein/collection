@@ -1,22 +1,37 @@
-<form>
-  <mat-form-field>
-    <mat-label>Name</mat-label>
-    <input type="text" matInput placeholder="Short name" name="name" [(ngModel)]="item.name">
-  </mat-form-field>
+<mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Item">
+    <form>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input type="text" matInput placeholder="Short name" name="name" [(ngModel)]="item.name">
+      </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>URL</mat-label>
-    <input type="url" matInput placeholder="Full URL" name="url" [(ngModel)]="item.url">
-  </mat-form-field>
+      <mat-form-field>
+        <mat-label>URL</mat-label>
+        <input type="url" matInput placeholder="Full URL" name="url" [(ngModel)]="item.url">
+      </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Category</mat-label>
-    <mat-select name="category" [(ngModel)]="item.category">
-      <mat-option *ngFor="let category of categories | async" [value]="category.name">
-        {{category.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select name="category" [(ngModel)]="item.category">
+          <mat-option *ngFor="let category of categories | async" [value]="category.name">
+            {{category.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-  <button mat-flat-button color="primary" (click)="addItem($event)">Add</button>
-</form>
+      <button mat-flat-button color="primary" (click)="addItem($event)">Add</button>
+    </form>
+  </mat-tab>
+
+  <mat-tab label="Caegory">
+    <form>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input type="text" matInput placeholder="Short name" name="name" [(ngModel)]="category.name">
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" (click)="addCategory($event)">Add</button>
+    </form>
+  </mat-tab>
+</mat-tab-group>

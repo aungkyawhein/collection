@@ -19,6 +19,9 @@ export class AddComponent implements OnInit {
     category: ''
   };
   categories: Observable<Category[]>;
+  category: Category = {
+    name: ''
+  };
 
   constructor(firestore: AngularFirestore) {
     this.itemsCollection = firestore.collection<Item>('items');
@@ -36,6 +39,13 @@ export class AddComponent implements OnInit {
       name : '',
       url: '',
       category: ''
+    };
+  }
+
+  addCategory(e) {
+    this.categoriesCollection.add(this.addCategory);
+    this.category = {
+      name: ''
     };
   }
 
