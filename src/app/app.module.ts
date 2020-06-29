@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 
@@ -37,6 +38,7 @@ import { AddComponent } from './add/add.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatTabsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],
