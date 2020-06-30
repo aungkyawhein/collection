@@ -11,20 +11,15 @@ import { Category } from '../models/category';
 })
 export class HomeComponent implements OnInit {
   private itemsCollection: AngularFirestoreCollection<Item>;
-  items: Array<Item> = [];
+  items: Observable<Item[]>;
 
-  constructor() { }
+  constructor(firestore: AngularFirestore) {
+    this.itemsCollection = firestore.collection<Item>('items');
+    this.items = this.itemsCollection.valueChanges();
+  }
 
   ngOnInit(): void {
-    let i = 10;
-    while (i > 0) {
-      this.items.push({
-        name: 'Item ' + i,
-        url: '#',
-        category: 'test'
-      });
-      i--;
-    }
+
   }
 
 }
