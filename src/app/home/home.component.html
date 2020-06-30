@@ -1,5 +1,6 @@
-<mat-card *ngFor="let item of items">
+<mat-card *ngFor="let item of items | async">
   <mat-card-content>
-    <a [href]="item.url">{{item.name}}</a>
+    <a [href]="item.url" target="_blank">{{item.name}}</a>
+    <span>{{item.category}}</span>
   </mat-card-content>
 </mat-card>
