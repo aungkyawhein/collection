@@ -1,6 +1,8 @@
 <mat-card *ngFor="let item of items | async">
   <mat-card-content>
-    <a [href]="item.url" target="_blank">{{item.name}}</a>
-    <span>{{item.category}}</span>
+    <div class="flex">
+      <div><a [href]="item.url" target="_blank">{{item.name}}</a></div>
+      <div><span class="badge">{{item.category}}</span></div>
+    </div>
   </mat-card-content>
 </mat-card>

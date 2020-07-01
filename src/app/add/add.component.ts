@@ -43,7 +43,7 @@ export class AddComponent implements OnInit {
   }
 
   addCategory(e) {
-    this.categoriesCollection.add(this.addCategory);
+    this.categoriesCollection.add(this.category);
     this.category = {
       name: ''
     };
