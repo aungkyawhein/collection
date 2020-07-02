@@ -1,3 +1,13 @@
+<div class="flex flex-end">
+  <button mat-button [matMenuTriggerFor]="filter">Filter</button>
+</div>
+
+<mat-menu #filter="matMenu">
+  <button mat-menu-item *ngFor="let category of categories | async">
+    {{category.name}}
+  </button>
+</mat-menu>
+
 <mat-card *ngFor="let item of items | async">
   <mat-card-content>
     <div class="flex">
