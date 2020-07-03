@@ -3,7 +3,7 @@
 </div>
 
 <mat-menu #filter="matMenu">
-  <button mat-menu-item *ngFor="let category of categories | async">
+  <button mat-menu-item *ngFor="let category of categories | async" (click)="filterCategory(category)">
     {{category.name}}
   </button>
 </mat-menu>
