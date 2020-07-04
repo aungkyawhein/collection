@@ -20,17 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(firestore: AngularFirestore) {
     this.categoryFilter$ = new BehaviorSubject(null);
     this.itemsCollection = firestore.collection<Item>('items');
-    this.items = combineLatest(
-      this.categoryFilter$
-    ).pipe(
-      switchMap(([category]) =>
-      firestore.collection('items', ref => {
-          let query : firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
-          if (category) { query = query.where('category', '==', category) };
-          return query;
-        }).valueChanges()
-      )
-    );
+    this.items = this.itemsCollection.valueChanges();
     this.categoriesCollection = firestore.collection<Category>('categories');
     this.categories = this.categoriesCollection.valueChanges();
   }
@@ -40,7 +30,7 @@ export class HomeComponent implements OnInit {
   }
 
   filterCategory(category: Category) {
-    this.categories = this.categoriesCollection.ref.where('category', '==', category.name);
+    console.log('catetory', category);
   }
 
 }
