@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'collection';
+  githubLink = 'https://github.com/aungkyawhein/collection';
   constructor() { }
 }

@@ -1,5 +1,7 @@
 <div class="flex flex-end">
-  <button mat-button [matMenuTriggerFor]="filter">Filter</button>
+  <button mat-icon-button color="primary" aria-label="Filter" [matMenuTriggerFor]="filter">
+    <mat-icon>filter_list</mat-icon>
+  </button>
 </div>
 
 <mat-menu #filter="matMenu">

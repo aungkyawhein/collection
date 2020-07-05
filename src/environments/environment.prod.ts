@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: 'API_KEY',
-    authDomain: 'AUTH_DOMAIN',
-    databaseURL: 'DATABASE_URL',
-    projectId: 'PROJECT_ID',
-    storageBucket: 'STORAGE_BUCKET',
-    messagingSenderId: 'MESSAGING_SENDER_ID'
+    apiKey: 'AIzaSyCElmUqrJXyhF3TvDi_Ou7R-5zZAl4JmUE',
+    authDomain: 'collection-b955a.firebaseapp.com',
+    databaseURL: 'https://collection-b955a.firebaseio.com',
+    projectId: 'collection-b955a',
+    storageBucket: 'collection-b955a.appspot.com',
+    messagingSenderId: '818834817576'
   }
 };
