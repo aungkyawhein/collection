@@ -5,12 +5,15 @@
 </div>
 
 <mat-menu #filter="matMenu">
+  <button mat-menu-item (click)="filterCategory(null)">
+    All
+  </button>
   <button mat-menu-item *ngFor="let category of categories | async" (click)="filterCategory(category)">
     {{category.name}}
   </button>
 </mat-menu>
 
-<mat-card *ngFor="let item of items | async">
+<mat-card *ngFor="let item of filteredItems | async">
   <mat-card-content>
     <div class="flex">
       <div><a [href]="item.url" target="_blank">{{item.name}}</a></div>
