@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   items: Observable<Item[]>;
   filteredItems: Observable<Item[]>;
   categories: Observable<Category[]>;
+  loading = true;
+  emptyCategory = false;
 
   constructor(
     private collectionService: CollectionsService,
@@ -35,10 +37,15 @@ export class HomeComponent implements OnInit {
   getFilteredItems(category: Category) {
     return this.items.pipe(
       map(items => {
+        this.loading = false;
         if (category) {
-          return items.filter(
+          const returnItems = items.filter(
             item => item.category === category.name
           );
+          if (!returnItems.length) {
+            this.emptyCategory = true;
+          }
+          return returnItems;
         }
         return items;
       })
@@ -46,6 +53,8 @@ export class HomeComponent implements OnInit {
   }
 
   filterCategory(category: Category) {
+    this.loading = true;
+    this.emptyCategory = false;
     this.filteredItems = this.getFilteredItems(category);
   }
 
