@@ -13,6 +13,22 @@
   </button>
 </mat-menu>
 
+<div class="flex flex-end" *ngIf="loading">
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
+</div>
+
+<mat-card *ngIf="emptyCategory">
+  <mat-card-content>
+    <div class="flex">
+      <div>No item for this category.</div>
+      <button mat-raised-button color="primary" routerLink="/add">
+        <mat-icon aria-hidden="false" aria-label="Add">add</mat-icon>
+        Add an item
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
 <mat-card *ngFor="let item of filteredItems | async">
   <mat-card-content>
     <div class="flex">
