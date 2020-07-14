@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Item } from '../models/item';
@@ -22,6 +23,8 @@ export class AddComponent implements OnInit {
   category: Category = {
     name: ''
   };
+  name = new FormControl('', [Validators.required]);
+  url = new FormControl('', [Validators.required]);
 
   constructor(firestore: AngularFirestore) {
     this.itemsCollection = firestore.collection<Item>('items');
@@ -47,6 +50,10 @@ export class AddComponent implements OnInit {
     this.category = {
       name: ''
     };
+  }
+
+  getErrorMessage() {
+    return 'Error message';
   }
 
 }
