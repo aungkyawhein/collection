@@ -27,13 +27,6 @@
   </mat-tab>
 
   <mat-tab label="Caegory">
-    <form>
-      <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input type="text" matInput placeholder="Short name" name="name" [(ngModel)]="category.name">
-      </mat-form-field>
-
-      <button mat-flat-button color="primary" (click)="addCategory($event)">Add</button>
-    </form>
+    <app-add-category></app-add-category>
   </mat-tab>
 </mat-tab-group>

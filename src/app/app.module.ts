@@ -20,12 +20,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AddComponent
+    AddComponent,
+    AddCategoryComponent
   ],
   imports: [
     BrowserModule,
