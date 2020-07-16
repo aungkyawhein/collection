@@ -1,0 +1,9 @@
+<form >
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input type="text" matInput placeholder="Short name" name="name" [(ngModel)]="category.name" required>
+    <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" (click)="addCategory($event)" [disabled]="name.invalid">Add</button>
+</form>

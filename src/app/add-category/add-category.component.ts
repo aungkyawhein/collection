@@ -4,14 +4,14 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 import { Item } from '../models/item';
 import { Category } from '../models/category';
-import { AddCategoryComponent } from '../add-category/add-category.component';
 
 @Component({
-  selector: 'app-add',
-  templateUrl: './add.component.html',
-  styleUrls: ['./add.component.sass']
+  selector: 'app-add-category',
+  templateUrl: './add-category.component.html',
+  styleUrls: ['./add-category.component.sass']
 })
-export class AddComponent implements OnInit {
+export class AddCategoryComponent implements OnInit {
+
   private itemsCollection: AngularFirestoreCollection<Item>;
   private categoriesCollection: AngularFirestoreCollection<Category>;
   items: Observable<Item[]>;
@@ -37,12 +37,10 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addItem(e) {
-    this.itemsCollection.add(this.item);
-    this.item = {
-      name : '',
-      url: '',
-      category: ''
+  addCategory(e) {
+    this.categoriesCollection.add(this.category);
+    this.category = {
+      name: ''
     };
   }
 
