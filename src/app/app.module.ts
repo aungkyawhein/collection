@@ -21,13 +21,15 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
+import { AddItemComponent } from './add-item/add-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AddComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
