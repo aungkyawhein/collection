@@ -1,0 +1,24 @@
+<form (ngSubmit)="addItem($event)">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input type="text" matInput placeholder="Short name" name="name" [(ngModel)]="item.name" required>
+    <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>URL</mat-label>
+    <input type="url" matInput placeholder="Full URL" name="url" [(ngModel)]="item.url" required>
+    <mat-error *ngIf="url.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Category</mat-label>
+    <mat-select name="category" [(ngModel)]="item.category" required>
+      <mat-option *ngFor="let category of categories | async" [value]="category.name">
+        {{category.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button type="submit" mat-flat-button color="primary">Add</button>
+</form>
