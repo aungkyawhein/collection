@@ -1,3 +1,7 @@
+/**
+ * Use reactive form for this item add
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';

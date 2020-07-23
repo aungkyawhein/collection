@@ -1,5 +1,8 @@
+/**
+ * Use template-driven form for this category add
+ */
+
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Category } from '../models/category';
@@ -15,7 +18,6 @@ export class AddCategoryComponent implements OnInit {
   category: Category = {
     name: ''
   };
-  name = new FormControl('', [Validators.required]);
 
   constructor(firestore: AngularFirestore) {
     this.categoriesCollection = firestore.collection<Category>('categories');
