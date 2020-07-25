@@ -1,5 +1,5 @@
 /**
- * Use template-driven form for this category add
+ * Use template-driven form for this add category component
  */
 
 import { Component, OnInit } from '@angular/core';
