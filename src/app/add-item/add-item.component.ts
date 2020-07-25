@@ -1,9 +1,9 @@
 /**
- * Use reactive form for this item add
+ * Use reactive form for this add item component
  */
 
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Item } from '../models/item';
@@ -18,36 +18,30 @@ export class AddItemComponent implements OnInit {
 
   private itemsCollection: AngularFirestoreCollection<Item>;
   private categoriesCollection: AngularFirestoreCollection<Category>;
-  items: Observable<Item[]>;
-  item: Item = {
-    name : '',
-    url: '',
-    category: ''
-  };
   categories: Observable<Category[]>;
-  category: Category = {
-    name: ''
-  };
+
   name = new FormControl('', [Validators.required]);
   url = new FormControl('', [Validators.required]);
+  category = new FormControl('', [Validators.required]);
+  addItemForm: any;
 
-  constructor(firestore: AngularFirestore) {
+  constructor(firestore: AngularFirestore, fb: FormBuilder) {
     this.itemsCollection = firestore.collection<Item>('items');
-    this.items = this.itemsCollection.valueChanges();
     this.categoriesCollection = firestore.collection<Category>('categories');
     this.categories = this.categoriesCollection.valueChanges();
+
+    this.addItemForm = fb.group({
+      name: this.name,
+      url: this.url,
+      category: this.category
+    });
   }
 
   ngOnInit(): void {
   }
 
   addItem(e) {
-    this.itemsCollection.add(this.item);
-    this.item = {
-      name : '',
-      url: '',
-      category: ''
-    };
+    this.itemsCollection.add(this.addItemForm.value);
   }
 
   getErrorMessage() {
