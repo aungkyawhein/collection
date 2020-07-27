@@ -20,8 +20,10 @@ export class AddItemComponent implements OnInit {
   private categoriesCollection: AngularFirestoreCollection<Category>;
   categories: Observable<Category[]>;
 
+  urlReg = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+
   name = new FormControl('', [Validators.required]);
-  url = new FormControl('', [Validators.required]);
+  url = new FormControl('', [Validators.required, Validators.pattern(this.urlReg)]);
   category = new FormControl('', [Validators.required]);
   addItemForm: any;
 
