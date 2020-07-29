@@ -46,8 +46,8 @@ export class AddItemComponent implements OnInit {
     this.itemsCollection.add(this.addItemForm.value);
   }
 
-  getErrorMessage() {
-    return 'Error message';
+  getErrorMessage(inputName) {
+    return 'Please fill the valid ' + inputName;
   }
 
 }

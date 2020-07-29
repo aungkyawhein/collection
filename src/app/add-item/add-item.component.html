@@ -2,13 +2,13 @@
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input type="text" matInput placeholder="Short name" name="name" [formControl]="name" required>
-    <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+    <mat-error *ngIf="name.invalid">{{getErrorMessage('Name')}}</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>URL</mat-label>
     <input type="url" matInput placeholder="Full URL" name="url" [formControl]="url" required>
-    <mat-error *ngIf="url.invalid">{{getErrorMessage()}}</mat-error>
+    <mat-error *ngIf="url.invalid">{{getErrorMessage('URL')}}</mat-error>
   </mat-form-field>
 
   <mat-form-field>
@@ -18,7 +18,7 @@
         {{category.name}}
       </mat-option>
     </mat-select>
-    <mat-error *ngIf="category.invalid">{{getErrorMessage()}}</mat-error>
+    <mat-error *ngIf="category.invalid">{{getErrorMessage('Category')}}</mat-error>
   </mat-form-field>
 
   <button type="submit" mat-flat-button color="primary" [disabled]="!addItemForm.valid">Add</button>
