@@ -34,8 +34,8 @@ export class AddCategoryComponent implements OnInit {
     };
   }
 
-  getErrorMessage() {
-    return 'Error message';
+  getErrorMessage(inputName) {
+    return 'Please fill the valid ' + inputName;
   }
 
 }
