@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { AddItemComponent } from './add-item/add-item.component';
+import { CategoryCheckDirective } from './directives/category-check.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AddItemComponent } from './add-item/add-item.component';
     HomeComponent,
     AddComponent,
     AddCategoryComponent,
-    AddItemComponent
+    AddItemComponent,
+    CategoryCheckDirective
   ],
   imports: [
     BrowserModule,
