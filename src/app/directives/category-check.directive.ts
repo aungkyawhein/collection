@@ -5,9 +5,9 @@ export const checkCategory: ValidatorFn = (control: FormGroup): ValidationErrors
   const name = control.get('name');
   // TODO:
   // to check firebase category list
-  const alterEgo = 'css';
+  const existingCategoryName = 'css';
 
-  return name && alterEgo && name.value === alterEgo ? {appCategoryCheck: true } : null;
+  return name && existingCategoryName && name.value === existingCategoryName ? {categoryCheck: true } : null;
 };
 
 @Directive({
