@@ -1,18 +1,26 @@
 <form #addCategoryForm="ngForm" appCategoryCheck>
-  <mat-form-field>
+  <mat-form-field
+    [ngClass]="{'mat-form-field-invalid': addCategoryForm.errors?.categoryCheck}">
     <mat-label>Name</mat-label>
-    <input type="text" matInput placeholder="Short name"
+    <input
+      type="text"
+      matInput
+      placeholder="Short name"
       name="name"
       #name="ngModel"
-      [(ngModel)]="category.name" required>
-    <!--
-      TODO:
-      To show error message for existing category
-    -->
+      [(ngModel)]="category.name"
+      required>
     <mat-error
       *ngIf="name.invalid && (name.dirty || name.touched)">
       {{getErrorMessage('Name')}}
     </mat-error>
+    <!--
+      TODO:
+      To show error message for existing category
+    -->
+    <mat-hint *ngIf="addCategoryForm.errors?.categoryCheck">
+      This category already exist!
+    </mat-hint >
   </mat-form-field>
   <button mat-flat-button color="primary"
     (click)="addCategory($event)"
