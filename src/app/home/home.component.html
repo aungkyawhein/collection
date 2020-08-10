@@ -32,8 +32,12 @@
 <mat-card *ngFor="let item of filteredItems | async">
   <mat-card-content>
     <div class="flex">
-      <div><a [href]="item.url" target="_blank">{{item.name}}</a></div>
-      <div><span class="badge">{{item.category}}</span></div>
+      <div>
+        <a [href]="item.url" target="_blank">{{item.name}}</a>
+      </div>
+      <div>
+        <span class="badge" (click)="selectCategory(item.category)">{{item.category}}</span>
+      </div>
     </div>
   </mat-card-content>
 </mat-card>
