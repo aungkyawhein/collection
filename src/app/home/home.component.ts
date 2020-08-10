@@ -58,4 +58,10 @@ export class HomeComponent implements OnInit {
     this.filteredItems = this.getFilteredItems(category);
   }
 
+  selectCategory(categoryName: string) {
+    this.filterCategory({
+      name: categoryName
+    });
+  }
+
 }
