@@ -1,13 +1,17 @@
 <div class="flex flex-end">
+  <button mat-button color="primary"
+    aria-label="Filter clear"
+    (click)="filterCategory(null)"
+    *ngIf="filteredCategory">
+    Clear filters
+    <mat-icon>clear</mat-icon>
+  </button>
   <button mat-icon-button color="primary" aria-label="Filter" [matMenuTriggerFor]="filter">
     <mat-icon>filter_list</mat-icon>
   </button>
 </div>
 
 <mat-menu #filter="matMenu">
-  <button mat-menu-item (click)="filterCategory(null)">
-    All
-  </button>
   <button mat-menu-item *ngFor="let category of categories | async" (click)="filterCategory(category)">
     {{category.name}}
   </button>
